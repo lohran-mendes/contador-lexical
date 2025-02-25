@@ -1,30 +1,4 @@
-import fs from "node:fs";
-
-const link = process.argv[2];
-
-function receiveFileText() {
-  fs.readFile(link, "utf-8", (error, data) => {
-    try {
-      if (error) throw error;
-      writeReturnedFiles(
-        JSON.stringify(
-          separateParagraphsInObjects(separateTextIntoParagraphs(data))
-        )
-      );
-    } catch (error) {
-      if (error.code === "ENOENT") {
-        console.error(
-          `\nO arquivo do caminho: ${error.path} não foi encontrado.
-         \nVerifique se o caminho está correto\n`
-        );
-      } else {
-        console.log("Não esperava esse erro", error);
-      }
-    }
-  });
-}
-
-function separateTextIntoParagraphs(text) {
+export function separateTextIntoParagraphs(text) {
   if (typeof text === "string" && text.length > 0) {
     const arrayText = text
       .split("\r\n")
@@ -33,7 +7,7 @@ function separateTextIntoParagraphs(text) {
   } else console.log("Não há texto a ser lido");
 }
 
-function separateParagraphsInObjects(paragraphs) {
+export function separateParagraphsInObjects(paragraphs) {
   if (Array.isArray(paragraphs) && paragraphs.length > 0) {
     return paragraphs.map((paragraph, index) => {
       return {
@@ -62,30 +36,3 @@ function separateRepeatedWords(paragraph) {
     return objectOfRepeatedWords;
   }
 }
-
-function writeReturnedFiles(data) {
-  const nameFile = link.slice(link.lastIndexOf("/") + 1);
-  fs.writeFile(`./returned-files/${nameFile}`, treatTextData(data), (error) => {
-    try {
-      if (error) throw error;
-      console.log(
-        `\nPalavras duplicadas de ${nameFile} salvo com sucesso em returned-files!\n`
-      );
-    } catch (error) {
-      console.error(error);
-    }
-  });
-}
-
-function treatTextData(data) {
-  const enteredJson = JSON.parse(data);
-  let textReturned = "";
-  for (const element of enteredJson) {
-    textReturned += `Palavras duplicadas no parágrafo ${
-      element.paragraph
-    }: ${Object.keys(element.repeatedWords).join(", ")}\n`;
-  }
-  return textReturned;
-}
-
-receiveFileText();
