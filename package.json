@@ -1,7 +1,7 @@
 {
   "name": "nodejs-lib",
   "version": "1.0.0",
-  "description": "",
+  "description": "lib que contabiliza a repetição de palavras por parágrafos em textos",
   "homepage": "https://github.com/lohran-mendes/nodejs-lib#readme",
   "bugs": {
     "url": "https://github.com/lohran-mendes/nodejs-lib/issues"
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/lohran-mendes/nodejs-lib.git"
   },
   "license": "ISC",
-  "author": "",
+  "author": "Lohran Mendes",
   "type": "module",
   "main": "index.js",
   "scripts": {
