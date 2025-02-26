@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-lib",
+  "name": "contador-lexical",
   "version": "1.0.0",
   "description": "lib que contabiliza a repetição de palavras por parágrafos em textos",
   "homepage": "https://github.com/lohran-mendes/nodejs-lib#readme",
@@ -16,5 +16,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "commander": "^13.1.0"
   }
 }

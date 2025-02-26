@@ -1,10 +1,12 @@
+import chalk from "chalk";
+
 export function separateTextIntoParagraphs(text) {
   if (typeof text === "string" && text.length > 0) {
     const arrayText = text
       .split("\r\n")
       .filter((paragraph) => paragraph.length > 0);
     return arrayText;
-  } else console.log("Não há texto a ser lido");
+  } else console.log(chalk.red("Não há texto a ser lido"));
 }
 
 export function separateParagraphsInObjects(paragraphs) {
