@@ -2,13 +2,13 @@
   "name": "contador-lexical",
   "version": "1.0.0",
   "description": "lib que contabiliza a repetição de palavras por parágrafos em textos",
-  "homepage": "https://github.com/lohran-mendes/nodejs-lib#readme",
+  "homepage": "https://github.com/lohran-mendes/contador-lexical#readme",
   "bugs": {
-    "url": "https://github.com/lohran-mendes/nodejs-lib/issues"
+    "url": "https://github.com/lohran-mendes/contador-lexical/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lohran-mendes/nodejs-lib.git"
+    "url": "https://github.com/lohran-mendes/contador-lexical.git"
   },
   "license": "ISC",
   "author": "Lohran Mendes",
